@@ -1,9 +1,10 @@
 public class Main {
   public static void main(String[] args) {
-    Integer[] temp = {1,2,3,4,5,6,7,8,9,0};
-    BST<Integer> test = new BST<Integer>(temp);
-    test.postorder();
-    System.out.println();
-    test.preorder();
+    //For now, N == 10
+    Integer[] input = new Integer[10];
+    for (int i = 0; i < input.length; i++) {
+      input[i] = (int)(Math.random() * 100);
+    }
+    BST<Integer> searchTree = new BST<Integer>(temp);
   }
 }

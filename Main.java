@@ -5,6 +5,11 @@ public class Main {
     //TODO: merge in Ariels random code
     BST<Integer> searchTree = new BST<Integer>(input);
 
+    ArrayList<Integer> leaves = getLeaves(searchTree);
+
+    System.out.println("The # of nodes: " + (searchTree.size()-leaves.size()));
+    System.out.println("The # of leaves: " + leaves.size());
+
     //Ordered prints
     System.out.print("Print the tree in inorder");
     searchTree.inorder();

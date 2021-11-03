@@ -2,12 +2,19 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-    //For now, N == 10
-    Integer[] input = new Integer[10];
-    for (int i = 0; i < input.length; i++) {
-      input[i] = (int)(Math.random() * 100);
-    }
+    //TODO: merge in Ariels random code
     BST<Integer> searchTree = new BST<Integer>(input);
+
+    //Ordered prints
+    System.out.print("Print the tree in inorder");
+    searchTree.inorder();
+    System.out.println();
+    System.out.print("Print the tree in preorder");
+    searchTree.preorder();
+    System.out.println();
+    System.out.print("Print the tree in postorder");
+    searchTree.postorder();
+    System.out.println();
   }
 
   private static ArrayList<Integer> getLeaves(BST<Integer> tree) {

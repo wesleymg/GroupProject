@@ -20,6 +20,14 @@ public class Main {
     System.out.print("Print the tree in postorder");
     searchTree.postorder();
     System.out.println();
+
+    //Print paths
+    System.out.print("Print the paths: [ ");
+    for (int leaf: leaves) {
+      searchTree.path(leaf);
+      System.out.print(" ");
+    }
+    System.out.println("]");
   }
 
   private static ArrayList<Integer> getLeaves(BST<Integer> tree) {

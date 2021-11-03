@@ -15,6 +15,8 @@ public class Main {
     return crawler(root);
   }
 
+  //Crawls through tree and returns an ArrayList of the leaves beneath any given
+  //node
   private static ArrayList<Integer> crawler(BST.TreeNode<Integer> root) {
     ArrayList<Integer> results = new ArrayList<Integer>();
     if (root.left == null && root.right == null) {

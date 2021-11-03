@@ -7,6 +7,8 @@ public class Main {
 
     ArrayList<Integer> leaves = getLeaves(searchTree);
 
+    System.out.println("The height of the tree is: " + getHeight(searchTree));
+
     System.out.println("The # of nodes: " + (searchTree.size()-leaves.size()));
     System.out.println("The # of leaves: " + leaves.size());
 
@@ -31,13 +33,12 @@ public class Main {
   }
 
   private static ArrayList<Integer> getLeaves(BST<Integer> tree) {
-    BST.TreeNode<Integer> root = tree.getRoot();
-    return crawler(root);
+    return leafCrawler(tree.getRoot());
   }
 
   //Crawls through tree and returns an ArrayList of the leaves beneath any given
   //node
-  private static ArrayList<Integer> crawler(BST.TreeNode<Integer> root) {
+  private static ArrayList<Integer> leafCrawler(BST.TreeNode<Integer> root) {
     ArrayList<Integer> results = new ArrayList<Integer>();
     if (root.left == null && root.right == null) {
       results.add(root.element);
@@ -50,5 +51,14 @@ public class Main {
       results.addAll(crawler(root.right));
     }
     return results;
+  }
+
+  private static int getHeight(BST tree) {
+    return heightCrawler(tree.getRoot());
+  }
+
+  private static int heightCrawler(BST.TreeNode<Integer> root) {
+    if (root == null) return 1;
+    return Math.max(preorder(root.left), preorder(root.right)) + 1;
   }
 }
